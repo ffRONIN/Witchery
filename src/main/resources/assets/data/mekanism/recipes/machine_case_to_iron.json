@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    "   ",
+    " M ",
+    "   "
+  ],
+  "key": {
+    "M": {
+      "item": "qi:machine_case"
+    }
+  },
+  "result": {
+    "item": "minecraft:iron_ingot",
+    "count": 8
+  }
+}

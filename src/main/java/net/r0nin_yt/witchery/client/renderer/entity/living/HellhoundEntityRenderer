@@ -1,0 +1,32 @@
+
+
+package net.r0nin_yt.witchery.client.renderer.entity.living;
+
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.util.Identifier;
+import net.r0nin_yt.witchery.WitcheryClient;
+
+@Environment(EnvType.CLIENT)
+public class HellhoundEntityRenderer extends MobEntityRenderer<HellhoundEntity, HellhoundEntityModel<HellhoundEntity>> {
+	private static Identifier[] TEXTURES;
+
+	public HellhoundEntityRenderer(EntityRendererFactory.Context context) {
+		super(context, new HellhoundEntityModel<>(context.getPart(WitcheryClient.HELLHOUND_MODEL_LAYER)), 0.3f);
+	}
+
+	@Override
+	public Identifier getTexture(HellhoundEntity entity) {
+		if (TEXTURES == null) {
+			int variants = entity.getVariants();
+			TEXTURES = new Identifier[variants];
+			for (int i = 0; i < variants; i++) {
+				TEXTURES[i] = new Identifier(Bewitchment.MODID, "textures/entity/living/hellhound/" + i + ".png");
+			}
+		}
+		return TEXTURES[entity.getDataTracker().get(BWHostileEntity.VARIANT)];
+	}
+}

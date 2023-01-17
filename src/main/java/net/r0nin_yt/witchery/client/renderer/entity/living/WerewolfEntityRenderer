@@ -1,0 +1,35 @@
+
+
+package net.r0nin_yt.witchery.client.renderer.entity.living;
+
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
+import net.minecraft.util.Identifier;
+import net.r0nin_yt.witchery.Witchery;
+import net.r0nin_yt.witchery.WitcheryClient;
+
+@Environment(EnvType.CLIENT)
+public class WerewolfEntityRenderer extends MobEntityRenderer<WerewolfEntity, WerewolfEntityModel<WerewolfEntity>> {
+	private static Identifier[] TEXTURES;
+
+	public WerewolfEntityRenderer(EntityRendererFactory.Context context) {
+		super(context, new WerewolfEntityModel<>(context.getPart(WitcheryClient.WEREWOLF_MODEL_LAYER)), 0.5f);
+		addFeature(new HeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+	}
+
+	@Override
+	public Identifier getTexture(WerewolfEntity entity) {
+		if (TEXTURES == null) {
+			int variants = entity.getVariants();
+			TEXTURES = new Identifier[variants];
+			for (int i = 0; i < variants; i++) {
+				TEXTURES[i] = new Identifier(Witchery.MOD_ID, "textures/entity/living/werewolf/" + i + ".png");
+			}
+		}
+		return TEXTURES[entity.getDataTracker().get(WitcheryHostileEntity.VARIANT)];
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "qi:lead_ore",
+    "qi:deepslate_lead_ore",
+    "qi:lead_block",
+    "qi:raw_lead_block"
+  ]
+}

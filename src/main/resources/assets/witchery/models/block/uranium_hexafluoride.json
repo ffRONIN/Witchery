@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abadoned_botany:block/alfsteel_block"
+  }
+}

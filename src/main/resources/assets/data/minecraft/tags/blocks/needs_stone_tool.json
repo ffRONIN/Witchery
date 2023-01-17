@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "qi:machine_case",
+    "qi:tin_block",
+    "qi:tin_ore",
+    "qi:deepslate_tin_ore",
+    "qi:raw_tin_block"
+  ]
+}

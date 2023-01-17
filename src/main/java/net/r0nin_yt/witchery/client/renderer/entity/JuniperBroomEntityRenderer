@@ -1,0 +1,21 @@
+
+
+package net.r0nin_yt.witchery.client.renderer.entity;
+
+
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.util.Identifier;
+import net.r0nin_yt.witchery.Witchery;
+
+public class JuniperBroomEntityRenderer extends BroomEntityRenderer<BroomEntity> {
+	private static final Identifier TEXTURE = new Identifier(Witchery.MOD_ID, "textures/entity/broom/juniper.png");
+
+	public JuniperBroomEntityRenderer(EntityRendererFactory.Context context) {
+		super(context);
+	}
+
+	@Override
+	public Identifier getTexture(BroomEntity entity) {
+		return TEXTURE;
+	}
+}

@@ -1,0 +1,21 @@
+
+
+package net.r0nin_yt.witchery.world.generator.tree.generator;
+
+
+import net.minecraft.block.sapling.SaplingGenerator;
+
+import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.r0nin_yt.witchery.registry.WitcheryWorldGenerators;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
+
+public class ElderSaplingGenerator extends SaplingGenerator {
+	@Nullable
+	@Override
+	protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+		return WitcheryWorldGenerators.ELDER_TREE;
+	}
+}
